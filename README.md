@@ -7,14 +7,14 @@ Choose names for classes and structs that tell us what they represent. Use Pasca
 Example:
 
 ```csharp
-public class ExampleClass { ... }
+public class CalculateCost { ... }
 ```
 ### 1.2. Interfaces
 Begin interface names with 'I' and then use PascalCase for the rest of the name. Make sure the name conveys what the interface does.
 Example:
 
 ```csharp
-public interface IExampleInterface { ... }
+public interface IFileManager { ... }
 ```
 
 ### 1.3. Methods and Functions
