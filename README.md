@@ -26,7 +26,7 @@ public void CalculateTotalPrice(Order order) { ... }
 ```
 
 ### 1.4. Variables and Fields
-Pick meaningful names for variables that describe what they hold. Use camelCase for these names.
+* Pick meaningful names for variables that describe what they hold. Use camelCase for these names.
 Example:
 
 ```csharp
@@ -36,7 +36,16 @@ int itemCount = 10;
 // NO
 int a = 10;
 ```
+* Private variables should have an underscore (`_`) prefix attached to them. To save additional keystrokes, avoid using the keyword `private` as `private int _a;` as it is the same as `int _a;`
+```
+// NO
+private int a;
+int a;
 
+// YES
+int _a;
+float _rotationY;
+```
 ### 1.5. Constants
 For constants, use uppercase letters separated by underscores. Name them so that it's clear what they represent.
 Example:
