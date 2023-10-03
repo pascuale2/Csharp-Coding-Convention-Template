@@ -1,33 +1,30 @@
-# Csharp-Coding-Convention-Template
-Example Coding Convention Template for C# if you do not know where to start.
-
-## 1. Naming Conventions
-### 1.1. Classes and Structs
+# 1. Naming Conventions:
+## 1.1. Classes, Structs, and Enums:
 Choose names for classes and structs that tell us what they represent. Use PascalCase for these names.
-Example:
+
 
 ```csharp
 public class CalculateCost { ... }
+public struct VehicleModel { ... }
+public enum VehicleStates { ... }
 ```
-### 1.2. Interfaces
-Begin interface names with 'I' and then use PascalCase for the rest of the name. Make sure the name conveys what the interface does.
-Example:
 
-```csharp
+## 1.2. Interfaces:
+Begin interface names with I and then use PascalCase for the rest of the name. Make sure the name conveys what the interface does.
+
+```charp
 public interface IFileManager { ... }
 ```
 
-### 1.3. Methods and Functions
+## 1.3. Methods and Functions:
 Use names for methods that explain what they do. These should also be in PascalCase.
-Example:
 
 ```csharp
 public void CalculateTotalPrice(Order order) { ... }
 ```
 
-### 1.4. Variables and Fields
-* Pick meaningful names for variables that describe what they hold. Use camelCase for these names.
-Example:
+## 1.4. Variables and Fields:
+Pick meaningful names for variables that describe what they hold. Use camelCase for these names.
 
 ```csharp
 // YES
@@ -36,8 +33,10 @@ int itemCount = 10;
 // NO
 int a = 10;
 ```
-* Private variables should have an underscore (`_`) prefix attached to them. To save additional keystrokes, avoid using the keyword `private` as `private int _a;` as it is the same as `int _a;`
-```
+
+Private variables should have an underscore (_) prefix attached to them. To save additional keystrokes, avoid using the keyword private as private int _a; as it is the same as int _a;
+
+```csharp
 // NO
 private int a;
 int a;
@@ -46,26 +45,24 @@ int a;
 int _a;
 float _rotationY;
 ```
-### 1.5. Constants
-For constants, use uppercase letters separated by underscores. Name them so that it's clear what they represent.
-Example:
+
+## 1.5. Constants:
+For constants, use SCREAMING_CAPS which are uppercase letters separated by underscores. Name them so that it's clear what they represent.
 
 ```csharp
 const int MAX_RETRY_COUNT = 3;
 ```
 
-### 1.6. Parameters
+## 1.6. Parameters:
 Give parameters descriptive names. These should also use camelCase.
-Example:
 
-```csharp
+```charp
 public void UpdateCustomerInfo(int customerId, CustomerData newData) { ... }
 ```
 
-## 2. Formatting
-### 2.1. Indentation and Braces
-Use 4 spaces for each indentation level. Start curly braces on the same line as the corresponding statement or declaration.
-Example:
+#2. Formatting:
+## 2.1. Indentation and Braces:
+Use one tab for each indentation level. Start curly braces on the line after the corresponding statement or declaration.
 
 ```csharp
 if (condition)
@@ -78,9 +75,8 @@ else
 }
 ```
 
-## 2.2. Line Length
-Keep your lines around 100-120 characters maximum. If a line is too long, break it into multiple lines.
-Example:
+## 2.2. Line Length:
+Although we don’t enforce line lengths its best to keep your lines around 100-120 characters maximum. If a line is too long, break it into multiple lines.
 
 ```csharp
 var longVariableName = someObject.SomeMethodWithLongName(
@@ -88,9 +84,10 @@ var longVariableName = someObject.SomeMethodWithLongName(
   parameter2,
   parameter3);
 ```
-### 2.3. Comments
-Use XML comments to document public APIs, parameters, return values, and exceptions. Add inline comments when needed.
-Example:
+
+## 2.3.1 Class Comments:
+Use XML comments to document public APIs, parameters, return values, and exceptions.
+> NOTE: When you change the parameters or functionality of the method or function, remember to update the XML comment for that function
 
 ```csharp
 /// <summary>
@@ -99,9 +96,21 @@ Example:
 /// <param name="order">The order to calculate the total for.</param>
 /// <returns>The total price of the order.</returns>
 public decimal CalculateTotal(Order order) { ... }
+type three forward slashes - /// to generate the above template in VS  and VS code.
 ```
 
-### 2.4. Blank Lines
+## 2.3.2 In-line Comments:
+When you want to add some notes about what your code does and why it is done in this way, add inline comments to clearly state your purpose.
+
+```csharp
+public decimal CalculateTotal(Order order) 
+{ 
+  // GST value based on the location of the order
+  order += GST(); 
+}
+```
+
+## 2.4. Blank Lines:
 Insert blank lines to separate different logical sections within a method or class.
 Example:
 
@@ -117,10 +126,8 @@ public void ProcessOrder(Order order)
 }
 ```
 
-### 2.5. Using Directives
+## 2.5. Using Directives:
 Put your using directives at the top of the file, outside of any namespaces. Group related directives together.
-
-Example:
 
 ```csharp
 using System;
