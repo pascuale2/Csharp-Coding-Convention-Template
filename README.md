@@ -52,7 +52,7 @@ public int a;
 
 protected internal int _b;
 protected int _c
-interal int _d;
+internal int _d;
 private protected int _e;
 
 // Don't use `private` in this case
