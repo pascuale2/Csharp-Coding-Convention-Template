@@ -45,6 +45,19 @@ int a;
 int _a;
 float _rotationY;
 ```
+How about the access modifiers between public and private? Do I have to use a _ as well?
+
+```csharp
+public int a;
+
+protected internal int _b;
+protected int _c
+interal int _d;
+private protected int _e;
+
+// Don't use `private` in this case
+int _f;
+```
 
 ## 1.5. Constants:
 For constants, use SCREAMING_CAPS which are uppercase letters separated by underscores. Name them so that it's clear what they represent.
@@ -137,6 +150,27 @@ namespace MyNamespace
 {
     // Class and namespace definitions...
 }
+```
+
+## 2.5.1 Related Directive Grouping:
+
+Format your directives in this order:
+
+1. C# Directives
+
+2. Unity Directives
+
+3. 3rd Party Directives
+
+```csharp
+using System;
+using System.Collections.Generic;
+
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+using DO.Tween;
+using TMPro;
 ```
 
 # 3. General Guidelines:
