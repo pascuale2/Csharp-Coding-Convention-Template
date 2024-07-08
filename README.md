@@ -162,6 +162,8 @@ Format your directives in this order:
 
 3. 3rd Party Directives
 
+4. Local Directives / Static Namespace Directives 
+
 ```csharp
 using System;
 using System.Collections.Generic;
@@ -171,8 +173,56 @@ using UnityEngine.SceneManagement;
 
 using DO.Tween;
 using TMPro;
+
+using CustomLibrary.Runtime.SubFolder.ClassName;
+using static NamespaceName.Runtime.ClassName;
 ```
 
+# 2.6 Order of Variables:
+
+Organizing the order of variables within a class is essential for readability. Follow a consistent order to enhance code clarity. 
+
+## 2.6.1 Enumerations, Sub-Classes, and Struct Declarations:
+
+Place enum declarations, sub-classes, and struct declarations at the beginning of the class to provide a clear overview of the types involved.
+
+```csharp
+public class MyClass
+{
+    public enum Status
+    {
+      ...
+    }
+    
+    public struct TestStruct
+    {
+      ...
+    }
+    
+    // Constants and Variables will follow...
+    // ...
+
+    // Other members and methods will follow...
+}
+```
+
+## 2.6.2 Constants & Static Readonly Variables:
+
+Group constants and static variable declarations at the top of the class, right below any enum/sub-class/struct declarations.
+
+```csharp
+public class MyClass
+{   
+    // enum/sub-class/struct declarations go here
+    
+    const int MAX_ITERATIONS = 5;
+    
+    public static readonly float PI_APPROX;
+
+    int _count;
+    string _name;
+}
+```
 # 3. General Guidelines:
 ## 3.1. Consistency:
 Make sure your code follows the style guide everywhere. If you're working on an existing project, stick to the existing style of the project unless judgement says otherwise.
